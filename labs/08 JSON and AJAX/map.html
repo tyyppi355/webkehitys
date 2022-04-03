@@ -28,11 +28,24 @@
 			alert("Looks like you have an old browser!");
 		}
 	}
+
+    function myFunction() {
+        var x = document.createElement("LI");
+        var t = document.createTextNode("Ikkuna");
+        x.appendChild(t);
+        document.getElementById("myList").appendChild(x);
+    }
   </script>
 </head>
 <body>
 	<img id="map" src="data/map.jpg">
 	<p id="coords">Move mouse over map to find coordinates...</p>
 	<div id="mydiv" style="border:1px solid red">I am a DIV! Click me.</div>
+    <ul id="myList">
+        <li>Pöytä</li>
+        <li>Raami</li>
+        <li>Ovi</li>
+    </ul>
+    <button onclick="myFunction()">Try it</button>
 </body>
 </html>

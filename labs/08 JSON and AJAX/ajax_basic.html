@@ -9,15 +9,22 @@
   <span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
     Make a request
   </span>
-
+  <form>
+      <label for="url">Type the URL:</label>
+      <input type="text" id="url" name="url1" class="searchField">
+      <br><br>
+      <button type="button" id="kebab">Click Me!</button>
+  </form>
 
   <script type="text/javascript">
   (function() {
     var httpRequest;
     var testUrl = 'data/story.json';
+    var urli = document.getElementsByClassName("searchField")[0].value;
     // Use Github Gist when no web server is available
     // var testUrl = 'https://gist.githubusercontent.com/c0lin/571d38b984d41b44aacf/raw/story.json';
-    document.getElementById("ajaxButton").onclick = function() { makeRequest(testUrl); };
+
+      document.getElementById("kebab").onclick = function() { makeRequest(urli); };
 
     function makeRequest(url) {
       if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -50,6 +57,9 @@
     // the callback
     // this will be run when the request completes (see above)
     function alertContents() {
+        if(httpRequest.readyState === 404){
+            alert('Päin vittua');
+        }
       if (httpRequest.readyState === 4) {
         if (httpRequest.status === 200) {
           alert(httpRequest.responseText);
@@ -60,6 +70,9 @@
     }
   })();
   </script>
+  <br>
+  <br>
+
 
 </body>
 </html>

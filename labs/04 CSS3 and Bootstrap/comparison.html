@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table {
+            font-family: Serif;
+            border-collapse: collapse;
+            width:36%;
+
+        }
+        .info{border-right: 1px solid black; font-weight: bold;}
+        .text{border: 1px solid black;}
+        .title{font-weight: bold;text-align: center;font-size: 18px;letter-spacing: 2px;}
+
+        td, th {
+
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f0eeeb;
+
+        }
+
+        tr:nth-child(2) {
+            background-color: red;
+            color: white;
+        }
+
+        tr:first-child {
+            background-color: white;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="menu">
+    <table>
+        <tr>
+            <td colspan="4" class="title text">TECHNICAL COMPARISON</td>
+        </tr>
+        <tr class="text">
+            <th class="info">PROPERTY</th>
+            <th>COMMODORE 64</th>
+            <th>ZX SPECTRUM</th>
+            <th>COMMODORE VIC-20</th>
+        </tr>
+        <tr class="text">
+            <td class="info">CPU</td>
+            <td>MOS Technology 6510</td>
+            <td>Zilog Z80</td>
+            <td>MOS Technology 6502</td>
+        </tr>
+        <tr class="text">
+            <td class="info">RAM</td>
+            <td>64 kilobytes</td>
+            <td>16 or 64 kilobytes</td>
+            <td>5 kilobytes</td>
+        </tr>
+        <tr class="text">
+            <td class="info">ROM</td>
+            <td>20 kilobytes</td>
+            <td>16 kilobytes</td>
+            <td>16 kilobytes</td>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>

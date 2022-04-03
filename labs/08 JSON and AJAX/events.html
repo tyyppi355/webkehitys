@@ -7,6 +7,10 @@
 	span {
 		cursor: pointer;
 	}
+    div{
+      border-style: solid;
+      width: 8%
+    }
   </style>
   <script>
 window.onload = function() {
@@ -16,6 +20,21 @@ window.onload = function() {
 	} else if (div.attachEvent) {
 		div.attachEvent("click", handleClick);
 	}
+  let test = document.getElementById("divi");
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+  test.addEventListener("mouseover", function( event ) {
+    // highlight the mouseenter target
+    event.target.style.color = "green";
+    alert("You are howering over text div");
+
+    // reset the color after a short delay
+    setTimeout(function() {
+      event.target.style.color = "";
+    }, 500);
+  }, false);
+
 };
 
 function handleClick(e) {
@@ -29,9 +48,14 @@ function handleClick(e) {
 	alert("You clicked on " + target.id);
 }
 
+
+
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<div>
+  <p id="divi">Tekstiä nii julmetusti. </p>
+</div>
 </body>
 </html>

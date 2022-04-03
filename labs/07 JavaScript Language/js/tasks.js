@@ -9,38 +9,43 @@ var tasks = [];
 function addTask() {
     'use strict';
 
-    // Get the task:
-    var task = document.getElementById('task');
-
-    // Reference to where the output goes:
-    var output = document.getElementById('output');
-    
-    // For the output:
-    var message = '';
+    const task = document.getElementById('task');
+    const output = document.getElementById('output');
+    let message = '';
 
     if (task.value) {
-    
-        // Add the item to the array:
+
         tasks.push(task.value);
-        
-        // Update the page:
         message = '<h2>To-Do</h2><ol>';
-        for (var i = 0, count = tasks.length; i < count; i++) {
+        for (let i = 0; i < tasks.length; i++) {
             message += '<li>' + tasks[i] + '</li>';
         }
         message += '</ol>';
         output.innerHTML = message;
-        
-    } // End of task.value IF.
 
-    // Return false to prevent submission:
+    }
     return false;
-    
-} // End of addTask() function.
+
+}
+
+function removeDuplicates() {
+    'use strict';
+    const output = document.getElementById('output');
+    tasks = [...new Set(tasks)];
+    let message = '<h2>To-Do</h2><ol>';
+
+    for (let i = 0; i < tasks.length; i++) {
+        message += '<li>' + tasks[i] + '</li>';
+    }
+    message += '</ol>';
+    output.innerHTML = message;
+    return false;
+}
 
 // Initial setup:
 function init() {
     'use strict';
+    document.getElementById('remove').addEventListener("click", removeDuplicates)
     document.getElementById('theForm').onsubmit = addTask;
 } // End of init() function.
 window.onload = init;

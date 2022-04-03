@@ -9,7 +9,6 @@ var fidoString = '{ "name": "Fido", "breed": "Mixed", "weight": 38 }';
 var fido = JSON.parse(fidoString);
 console.log("We have made a dog out of a string! " + fido.name);
 
-
 var fido2 = {
 	name: "Fido",
 	breed: "Mixed",
@@ -18,8 +17,20 @@ var fido2 = {
 var fidoString = JSON.stringify(fido2);
 console.log("We made a string from a dog! " + fidoString);
 
+var emplyers = '{ "name", "title"}';
+var employee = {
+  name: { first: "Colin",
+    second: "Stephen" },
+  title: "Assistant Lecturer"
+};
+var emplyeestring = JSON.parse(employee);
+console.log("Työntekijän nimi: " + emplyeestring.name);
+
   </script>
 </head>
 <body>
+<div>
+
+</div>
 </body>
 </html>

@@ -16,28 +16,17 @@
     
 <meta charset="utf-8">    
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mars{
+    background-color: lightgray;
+    width: 66%;
+    border-radius: 9px;
+}
+.buttons{
+    left:40%;
+}
+</style>
 
-    <style>
-        div{
-
-        }
-        .mars{
-            padding: 1px;
-            background-color: lightgray;
-            width:100%;
-            border-radius: 25px;
-
-        }
-        h3{
-            border-style: solid;
-            margin: 1em;
-            width: 50%;
-        }
-        .Buttons{
-            margin-left: 40%;
-
-        }
-    </style>
     
 </head>
 <body>
@@ -45,20 +34,10 @@
 
 <div class="container">
     <h1>Space Escape</h1>
-    <p>
-        <img src="img/mars.jpg" class="img-rounded" alt="Planet Mars" width="200" height="200">
-    </p>
-    <div class="mars">
-        <h3 align="center" >Facts about Mars:</h3>
-        <ul>
-            <li>Mars is big, but not as big as Earth</li>
-            <li>Mars is red</li>
-            <li>Mars is probably a planet</li>
-        </ul>
-    </div>
     <p>Space Escape is a text adventure game where Per Finn, the protagonist, dares to venture the uncharted realms of planet Mars. Be prepared for thrill and suspension!</p>
-</div>
+
 <hr>
+
 <div class="row">
     <div class="col-sm-4">
         <h2>Setup</h2>
@@ -79,12 +58,23 @@
             <li>Ashphyxia</li>
         </ul>
     </div>
+    <div class="col-sm-4 mars">
+        <h3>Facts about Mars:</h3>
+        <p>Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often called the "Red Planet".</p>
+    </div>
+    <div class="col-sm-4">
+        <p>
+            <img src="img/mars.jpg" class="img-rounded" alt="Planet Mars" width="200" height="200">
+        </p>
+    </div>
 </div>
-<hr>
-<div class="Buttons">
-<button type="button">Next</button>
-<button type="button">Home</button>
-<button type="button">Previous</button>
+    <hr>
+</div>
+
+<div class="col-sm-4 buttons">
+    <button type="button">Next</button>
+    <button type="button">Home</button>
+    <button type="button">Previous</button>
 </div>
 </body>
 </html>

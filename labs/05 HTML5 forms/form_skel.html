@@ -6,58 +6,101 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Demonstrating HTML forms</title>
+		<link rel="stylesheet" href="form.css">
 	</head>
 	
 	<body>
 		<h1>Turnitin</h1>
 		<form  lang="fi" action="">
+			<fieldset>
 			<div>
-				Name: <input type="text" name="studentname"/>
+				Name: <input type="text" name="studentname" placeholder="Your full name"/>
 			</div>
+				<br>
 			<div>
-				Student id: <input type="text" name="id"  />
+				Student id: <input type="number" name="id"  placeholder="Your student ID" pattern="[0-9]{6}" title="6 digit id"/>
 			</div>
+				<br>
 			<div>
 				Email:
 				<!--
 				Make an input named "email"
 				-->
+				<input type="email" name="email" placeholder="Your email account" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Give a proper email! user@gmail.com"/>
 			</div>
+				<br>
 			<div>
 				Assignment:
 				<!--
 				Make an input named "assignment"
 				-->
-				
+				<input type="text" name="assigment" placeholder="Describe the assigment" />
 			</div>
-
+				<br>
 			<div>
 				Code:
 				<!--
 				Make an input named "code" which is a text area to put student's code into.
 				-->
-				
+				<textarea type="code" name="code" placeholder="Put code here"></textarea>
 			</div>
+				<br>
 			<div>
 				Cheat:
 			<!--
 				Make an input named "cheat" which is a check box the student must check.
 			-->
+				<label>
+				<input type="checkbox" name="cheat">
+					must be checked
+				</label>
 			</div>
+				<br>
 			<div>
+				<fieldset class="maksu">
 				Pay:
 			<!--
 				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
 			-->
+				<label>
+				<input type="radio" name="payment" value="visa">
+				visa
+				</label>
+
+				<label>
+				<input type="radio" name="payment" value="paypal">
+					paypal
+				</label>
+
+				<label>
+				<input type="radio" name="payment" value="mastercard">
+				mastercard
+				</label>
+
+					</fieldset>
 			</div>
+				<br>
 			<div>
 				Score:
 			<!--
 				Make an input named "score" which is a list of choices for the score 
 			-->
+				<input list="browsers" name="browser" id="browser" placeholder="Select the score" pattern="[1-5]{1}" title="Select from number 1 to 5!">
+				<datalist id="browsers">
+					<option value="1">
+					<option value="2">
+					<option value="3">
+					<option value="4">
+					<option value="5">
+				</datalist>
 			</div>
-			<input type="submit" />
+				<br>
+			<input type="submit" class="nappi"/>
+			</fieldset>
 		</form>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>
+	<br>
+		<br>
+	<p>Student-ID tarkistetaan numeroiksi, mutta tulokseen on vaikea syöttää muuta kuin numeroita sillä se ei hyväksy muita kuin numeroita (teht 2)</p>
 	</body>
 </html>

@@ -5,8 +5,8 @@ body{
 }
 
 img{
-    width: 200px;
-    margin-left: 18%;
+    width: 170px;
+    margin-left: 24%;
     border: 2px lightblue;
     border-style:solid;
 }
@@ -30,26 +30,29 @@ p.kuvatext{
 p.blue {
 background-color: lightblue;
     border-top: 1px solid;
-    padding:2em;
+    padding:1.5em;
     margin-left: 2em;
     margin-right: 2em;
+    font-style: italic;
 }
 p.yellow {
-    background-color: darkkhaki;
+    background-color: #ffedbd;
     border-top: 1px solid;
-    padding:2em;
+    padding:1.5em;
     margin-top: -1em;
     margin-left: 2em;
     margin-right: 2em;
+    font-style: italic;
 }
 p.red {
     background-color: lightcoral;
     border-top: 1px solid;
     border-bottom: 1px solid;
-    padding:2em;
+    padding:1.5em;
     margin-top: -1em;
     margin-left: 2em;
     margin-right: 2em;
+    font-style: italic;
 }
 
 p.text::first-line{
@@ -57,4 +60,5 @@ p.text::first-line{
 }
 p.text::first-line {
     font-weight: bold;
+    font-style: normal;
 }
