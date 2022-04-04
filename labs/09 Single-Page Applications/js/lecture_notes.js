@@ -1,16 +1,21 @@
-var notes = [];
+var notes = [0];
 
 /*
  * displays the 'add' screen if this has been bookmarked by user
  */
 if (window.location.hash == '#add' || notes.length === 0) {
 	document.getElementById('editPage').style.display = 'none';
+	console.log(notes.length);
 } else {
 	document.getElementById('addPage').style.display = 'none';
 }
 
+if(notes > 0){
+	document.getElementById('editPage').style.display = 'block';
+}
+
 document.querySelector('#addPage button').onclick = function() {
-	console.log('add note');
+
 	var title = document.querySelector('#addPage input').value;
 	var note = document.querySelector('#addPage textarea').value;
 };
@@ -20,10 +25,14 @@ document.querySelector('#addPage button').onclick = function() {
  */ 
 document.querySelector('nav > ul > li:nth-child(1)').onclick = function() {
 	console.log('first link clicked');
+	console.log('add note');
+
 };
 
 document.querySelector('nav > ul > li:nth-child(2)').onclick = function() {
 	console.log('second link clicked');
+	notes = notes + 1;
+	console.log(notes.length)
 };
 
 
