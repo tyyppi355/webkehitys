@@ -17,6 +17,9 @@ function Coffee(roast, ounces) {
 			return "large";
 		}
 	};
+
+
+
 	this.order = function() {
 		var msg;
 		switch (this.getSize()) {
@@ -33,14 +36,81 @@ function Coffee(roast, ounces) {
 	};
 }
 
+function sip (){
+    return "hmm tasty"
+};
+
+function Tea(type, ounces) {
+    this.type = type;
+    this.ounces = ounces;
+    this.getSize = function() {
+        if (this.ounces === 8) {
+            return "small";
+        } else if (this.ounces === 12) {
+            return "medium";
+        } else if (this.ounces === 16) {
+            return "large";
+        }
+    };
+
+    this.getSteepTime = function (){
+        let msg;
+        switch (this.getSize()) {
+            case "small":
+                msg = "Steep time is 2 minutes.";
+                break;
+            case "medium":
+                msg = "Steep time is 3 minutes.";
+                break;
+            case "large":
+                msg = "Steep time is 3.5 minutes.";
+                break;
+
+        }
+        return msg;
+    };
+
+
+    this.ordertea = function() {
+        var msg;
+        switch (this.getSize()) {
+            case "small":
+            case "medium":
+            case "large":
+                msg = "You've ordered a " + this.getSize() + " " + this.type + " . It will take about " + this.getSteepTime() + " until its ready.";
+                break;
+            default:
+                msg = "We don't have " + this.type + " at the moment :(";
+                break;
+        }
+        return msg;
+    };
+
+
+}
+
+
+
 var coffee = new Coffee("House Blend", 12);
 console.log(coffee.order());
+console.log(sip());
 
 var darkRoast = new Coffee("Dark Roast", 16);
 console.log(darkRoast.order());
+console.log(sip());
 
 var specialBlend = new Coffee("Special Blend", 200);
 console.log(specialBlend.order());
+console.log(sip());
+
+var BlackTea = new Tea("Black tea", 16);
+console.log(BlackTea.ordertea());
+console.log(sip());
+
+var Yellowtea = new Tea("Yellow tea", 8);
+console.log(Yellowtea.ordertea());
+console.log(sip());
+
 
 </script>
 </head>

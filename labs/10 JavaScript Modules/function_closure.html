@@ -42,10 +42,44 @@ window.onload = function() {
 	};
 };
 
+var prev_handler = window.onload;
+window.onload = function () {
+	if (prev_handler) {
+		prev_handler();
+	}
+	var speed = 0;
+	var increase = 10;
+	var decrease = 10;
+	var div = document.getElementById("message");
+
+	var button1 = document.getElementById("plus");
+	button1.onclick = function() {
+		speed = speed + increase;
+		div.innerHTML = "playback speed is " + speed + "%";
+	};
+
+	var button2 = document.getElementById("minus");
+	button2.onclick = function() {
+		speed = speed - decrease;
+		div.innerHTML = "playback speed is " + speed + "%";
+	};
+
+	var button3 = document.getElementById("zero");
+	button3.onclick = function() {
+		speed = 0;
+		div.innerHTML = "playback speed is " + speed + "%";
+	};
+};
+
 </script> 
 </head> 
 <body>
 	<button id="clickme">Click me!</button>
+
+	<button id="plus">+</button>
+	<button id="zero">0</button>
+	<button id="minus">-</button>
+	<div id="playback-speed"></div>
 	<div id="message"></div>
 </body>
 </html>
